@@ -3,6 +3,7 @@
 
 $('._jsNext').on('click', function(){
 	$('body').addClass("feed");
+	
 })
 
 // init swiper
