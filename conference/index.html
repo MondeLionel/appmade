@@ -19,7 +19,7 @@
 			<h1>So what is the plan?</h1>
 			<p>Let us find you an event of interest</p>
 			<img src="../common/img/10.jpg" alt="random illustration" class="img-fluid circular">
-			<a href="javascript:void(0)" class="btn customBtn">Find nearest conference</a>
+			<a href="javascript:void(0)" class="btn customBtn _jsNext">Find nearest conference</a>
 		</div>
 			
 			
@@ -34,7 +34,31 @@
 
 			<div class="searchForm">
 				<input type="search" id="search" placeholder="Search..." class="form-control">
-				<a href="javascript:void(0)"><img src="../common/icons/SVG/icon_adjust-vert.svg" alt="filters icon"></a>
+				<a href="javascript:void(0)" class="_jsOptions">
+					<img src="../common/icons/SVG/icon_adjust-vert.svg" alt="filters icon">
+				</a>
+				<div class="filters">
+					<form action="#" class="form">
+						<div class="form-row">
+							<label for="#timeFilter"></label>
+							<select name="timeFilter" id="timeFilter" class="form-control">
+								<option value="1">Anytime</option>
+								<option value="2">Tomorrow</option>
+								<option value="3">Next Weekend</option>
+								<option value="4">Next month</option>
+								<option value="5">Next 3 month</option>
+							</select>
+							<label for="#provinces"></label>
+							<select name="provinces" id="provinces" class="form-control">
+								<option value="10"> KZN</option>
+								<option value="11"> GP</option>
+								<option value="12"> WC</option>
+								<option value="13"> MP</option>
+								<option value="14"> NC</option>
+							</select>
+						</div>
+					</form>
+				</div>
 			</div>
 
 			<div class="confTags swiper-container">

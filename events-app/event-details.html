@@ -7,9 +7,57 @@
 	<link rel="stylesheet" href="../common/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../common/css/swiper.css">
 	<link rel="stylesheet" href="css/style.css">
+	<style>
+		.loader{
+			position: absolute;
+			top:0;
+			left: 0;
+			height: 91%;
+			width:100%;
+			background-color:#543737;
+			z-index: 2;
+			transform:translateX(100%);
+			transition: transform 0.5s ease-out;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: #fff;
+		}
+		.loading .loader{
+			transform:translateX(0);
+			transition: transform 0.5s ease-out;
+		}
+		.loading .loader h4{
+			color: #fff;
+			font-weight: bold;
+			font-size:0.8em;
+			animation-name: flutter;
+			animation-duration: 0.5s;
+			animation-iteration-count: infinite;
+			animation-timing-function: ease-in-out;
+
+		}
+
+		@keyframes flutter{
+			from{
+				opacity: 1;
+				color: #fff;
+				text-shadow:1px 1px #000;
+			}
+			to{
+				opacity: 0.8;
+				color: #eee;
+				text-shadow:2px 2px #000;
+			}
+		}
+
+	</style>
 </head>
-<body class="event-details">
+<body class="event-details loading">
 	<div class="mobile">
+		<div class="loader">
+			<h4>Loading Amakhala Filim</h4>
+		</div>
 		<div class="imgBg">
 			<a href="index.html"><img src="../common/icons/SVG/arrow_left.svg" alt="back" class="backIcon icon"></a>
 		</div>
@@ -17,116 +65,216 @@
 		<div>
 			<div class="tabbedContent">
 				<div class="eventInfo">
-						<div class="contentWrapper">
+					<div class="contentWrapper">
 						<h4>FINDING FEELS</h4>
-					<p class="details">
-						<span class="date">08 July</span>
-						<span class="location">
-							<img src="../common/icons/SVG/icon_pin_alt.svg" alt="location icon">
-							Durban, KZN
-						</span>
-					</p>
+						<p class="details">
+							<span class="date">08 July</span>
+							<span class="location">
+								<img src="../common/icons/SVG/icon_pin_alt.svg" alt="location icon">
+								Durban, KZN
+							</span>
+						</p>
 					</div>
-					<a href="#" class="favourite"><img src="../common/icons/SVG/icon_heart_alt.svg" alt="arrow pointing right" class="icon img-fluid"></a>
-				
+					<a id="favComp" href="javascript:void(0)" class="favourite">
+						<span class="imgWrapper"><img src="../common/icons/SVG/icon_heart_alt.svg" alt="arrow pointing right" class="icon img-fluid"></span>
+						<span class="imgWrapper"><img src="../common/icons/SVG/icon_heart.svg" alt="arrow pointing right" class="icon img-fluid jello-horizontal"></span>
+					</a>
+
 				</div>
 
 				<!-- tabs -->
-			<ul class="list-unstyled nav tab-nav">
-				<li class="nav-item">
-					<a href="#home"  id="home-tab" data-toggle="tab" class="active" >info</a>
-				</li>
-				<li class="nav-item">
-					<a href="#profile" id="profile-tab" data-toggle="tab">line up</a>
-				</li>
-				<li class="nav-item">
-					<a href="#profile" id="profile-tab" data-toggle="tab">Tickets</a>
-				</li>
-				<li class="nav-item">
-					<a href="#profile" id="profile-tab" data-toggle="tab">Event Map</a>
-				</li>
-			</ul>
+				<ul class="list-unstyled nav tab-nav">
+					<li class="nav-item">
+						<a href="#home"  id="home-tab" data-toggle="tab" class="active" >info</a>
+					</li>
+					<li class="nav-item">
+						<a href="#profile" id="profile-tab" data-toggle="tab">line up</a>
+					</li>
+					<li class="nav-item">
+						<a href="#profile" id="profile-tab" data-toggle="tab">Tickets</a>
+					</li>
+					<li class="nav-item">
+						<a href="#profile" id="profile-tab" data-toggle="tab">Event Map</a>
+					</li>
+				</ul>
 
 
-			<div class="tab-content" id="myTabContent">
-				<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+				<div class="tab-content" id="myTabContent">
+					<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
-					<!-- tag cloud? -->
+						<!-- tag cloud? -->
 
-					<div class="eventTags">
-						<a href="#" class="tag">Dubstep</a>
-						<a href="#" class="tag">Dance</a>
-						<a href="#" class="tag">House</a>
-						<a href="#" class="tag">EDM</a>
-						<a href="#" class="tag">Drum&amp;Bass</a>
-						<a href="#" class="tag">Techno</a>
-						<a href="#" class="tag">Trance</a>
-					</div>
+						<div class="eventTags">
+							<a href="#" class="tag">Dubstep</a>
+							<a href="#" class="tag">Dance</a>
+							<a href="#" class="tag">House</a>
+							<a href="#" class="tag">EDM</a>
+							<a href="#" class="tag">Drum&amp;Bass</a>
+							<a href="#" class="tag">Techno</a>
+							<a href="#" class="tag">Trance</a>
+						</div>
 
 
-					<!-- location details -->
+						<!-- location details -->
 
-					<div class="locationDetails">
-						<img src="../common/icons/SVG/icon_globe.svg" alt="stage brand icon" class="icon img-fluid">
-						<div class="location">
-							<p class="stage">Alpha stage</p>
-							<p class="location">
-								<img src="../common/icons/SVG/icon_pin_alt.svg" alt="location icon">
-								Check Location
-							</p>
+						<div class="locationDetails">
+							<img src="../common/icons/SVG/icon_globe.svg" alt="stage brand icon" class="icon img-fluid">
+							<div class="location">
+								<p class="stage">Alpha stage</p>
+								<p class="location">
+									<img src="../common/icons/SVG/icon_pin_alt.svg" alt="location icon">
+									Check Location
+								</p>
+							</div>
+						</div>
+
+						<!-- artist swiper -->
+
+						<div class="swiper-container artists">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide artist">
+									<img src="img/artists/1.jpg" alt="artist">
+								</div>
+								<div class="swiper-slide artist">
+									<img src="img/artists/2.jpg" alt="artist">
+								</div>
+								<div class="swiper-slide artist">
+									<img src="img/artists/3.jpg" alt="artist">
+								</div>
+								<div class="swiper-slide artist">
+									<img src="img/artists/4.jpg" alt="artist">
+								</div>
+								<div class="swiper-slide artist">
+									<img src="img/artists/5.jpg" alt="artist">
+								</div>
+								<div class="swiper-slide artist">
+									<img src="img/artists/6.jpg" alt="artist">
+								</div>
+
+							</div>
 						</div>
 					</div>
-							
-				<!-- artist swiper -->
+					<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 
-				<div class="swiper-container artists">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide artist">
-							<img src="img/artists/1.jpg" alt="artist">
-						</div>
-						<div class="swiper-slide artist">
-							<img src="img/artists/2.jpg" alt="artist">
-						</div>
-						<div class="swiper-slide artist">
-							<img src="img/artists/3.jpg" alt="artist">
-						</div>
-						<div class="swiper-slide artist">
-							<img src="img/artists/4.jpg" alt="artist">
-						</div>
-						<div class="swiper-slide artist">
-							<img src="img/artists/5.jpg" alt="artist">
-						</div>
-						<div class="swiper-slide artist">
-							<img src="img/artists/6.jpg" alt="artist">
-						</div>
-						
 					</div>
+
 				</div>
-				</div>
-				<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-	
-				</div>
-			
 			</div>
 		</div>
-	</div>
 
-		<a href="#" class="btn btn-block btn-danger customBtn">Buy Tickets</a>
-
+		<a href="#" class="btn btn-block customBtn _jsTickets">Buy Tickets</a>
 
 
 
-<div class="navigation">
-	<a href="#" class="item"><img src="../common/icons/SVG/icon_house_alt.svg" alt="home icon" class="icon img-fluid"></a>
-	<a href="#" class="item"><img src="../common/icons/SVG/icon_heart.svg" alt="home icon" class="icon img-fluid"></a>
-	<a href="#" class="item"><img src="../common/icons/SVG/icon_chat_alt.svg" alt="home icon" class="icon img-fluid"></a>
-	<a href="#" class="item"><img src="../common/icons/SVG/icon_lightbulb_alt.svg" alt="home icon" class="icon img-fluid"></a>
-</div>
+
+		<div class="navigation">
+			<a href="#" class="item"><img src="../common/icons/SVG/icon_house_alt.svg" alt="home icon" class="icon img-fluid"></a>
+			<a href="#" class="item"><img src="../common/icons/SVG/icon_heart.svg" alt="home icon" class="icon img-fluid"></a>
+			<a href="#" class="item"><img src="../common/icons/SVG/icon_chat_alt.svg" alt="home icon" class="icon img-fluid"></a>
+			<a href="#" class="item"><img src="../common/icons/SVG/icon_lightbulb_alt.svg" alt="home icon" class="icon img-fluid"></a>
+		</div>
+
+		<!-- modals -->
+
+		<div class="custModal">
+			<div class="modalContent">
+				<a href="#" class="closeIcon">
+					<img src="../common/icons/SVG/icon_close.svg" alt="">
+				</a>
+				<div class="modalHeader">
+					<h2>Please pick the card you prefer paying with.</h2>
+				</div>
+
+				<div class="scrollContainer">
+
+					<div class="masterCard" data-card="1">
+						<div class="cardWrapper">
+							<article class="cardHeader">
+								<img src="../common/icons/SVG/icon_stop_alt.svg" alt="" class="icon sim">
+								<img src="../common/icons/SVG/icon_target.svg" alt="" class="icon bankLogo">
+							</article>
+							<p class="mono">4444 5656 4789 0094</p>
+							<div class="cardFooter">
+								<p class="date">
+									<span class="expDate">05/2030</span>
+									<span class="owner">ML Nyawose</span>
+								</p>
+								<img src="../common/icons/SVG/visa.svg" alt="visa logo" class="icon visaLogo">
+							</div>
+
+
+						</div>
+						<div class="confirmPurchase">
+
+							<p>Your card details are secured. Please confirm purchase by entering the OTP sent to your phone</p>
+							<form action="#">
+								<input type="text" class="form-control" placeholder="556-676-006">
+								<button type="submit" class="btn btn-block customBtn">BUY</button>
+							</form>
+							<a href="javascript:void(0)" class="chooseCard"> choose another card?</a>
+						</div>
+					</div>
+
+					<div class="masterCard" data-card="2">
+						<div class="cardWrapper">
+							<article class="cardHeader">
+								<img src="../common/icons/SVG/icon_stop_alt.svg" alt="" class="icon sim">
+								<img src="../common/icons/SVG/icon_target.svg" alt="" class="icon bankLogo">
+							</article>
+							<p class="mono">4444 5656 4789 0094</p>
+							<div class="cardFooter">
+								<p class="date">
+									<span>05/2030</span>
+									<span>ML Nyawose</span>
+								</p>
+								<img src="../common/icons/SVG/visa.svg" alt="visa logo" class="icon visaLogo">
+							</div>
+						</div>
+						<div class="confirmPurchase">
+
+							<p>Your card details are secured. Please confirm purchase by entering the OTP sent to your phone</p>
+							<form action="#">
+								<input type="text" class="form-control" placeholder="556-676-006">
+								<button type="submit" class="btn btn-block customBtn">BUY</button>
+							</form>
+							<a href="javascript:void(0)" class="chooseCard"> choose another card?</a>
+						</div>
+					</div>
+
+					<div class="masterCard" data-card="3">
+						<div class="cardWrapper">
+							<article class="cardHeader">
+								<img src="../common/icons/SVG/icon_stop_alt.svg" alt="" class="icon sim">
+								<img src="../common/icons/SVG/icon_target.svg" alt="" class="icon bankLogo">
+							</article>
+							<p class="mono">4444 5656 4789 0094</p>
+							<div class="cardFooter">
+								<p class="date">
+									<span>05/2030</span>
+									<span>ML Nyawose</span>
+								</p>
+								<img src="../common/icons/SVG/visa.svg" alt="visa logo" class="icon visaLogo">
+							</div>
+						</div>
+						<div class="confirmPurchase">
+
+							<p>Your card details are secured. Please confirm purchase by entering the OTP sent to your phone</p>
+							<form action="#">
+								<input type="text" class="form-control" placeholder="556-676-006">
+								<button type="submit" class="btn btn-block customBtn">BUY</button>
+							</form>
+							<a href="javascript:void(0)" class="chooseCard"> choose another card?</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 	</div>
 	<script src="../common/js/jquery.min.js"></script>
 	<script src="../common/js/bootstrap.min.js"></script>
 	<script src="../common/js/swiper.js"></script>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
 	<script src="js/main.js"></script>
 </body>
 </html>
